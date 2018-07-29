@@ -1,7 +1,7 @@
 # garbageCollection
 
 #### 四 garbageCollection 20180729
-> [测试用例](https://github.com/wanwusangzhi1992/WebStudy/blob/master/dayTest/commonTest/testGarbageCollection.md)
+> [测试用例](https://github.com/wanwusangzhi1992/WebStudy/blob/master/dayTest/commonTest/testGarbageCollection.html)
 
 ```
 <!DOCTYPE html>
