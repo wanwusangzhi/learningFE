@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test jsonp</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	// 定义res.send返回的数据
+	function jsonp(data) {
+		console.log(JSON.stringify(data))
+		var obj = eval(data)
+		console.log(obj)
+	}
+	// 引用javascript， 返回后执行函数
+	var _script = document.createElement('script')
+	_script.type = 'text/javascript'
+	_script.src = 'http://localhost:80/jsonp?callback=jsonp'
+	document.head.appendChild(_script)
+</script>
+</html>
