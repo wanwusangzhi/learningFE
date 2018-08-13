@@ -5,7 +5,7 @@
 2. 后端现通过node接收到前端post的data数据, 再通过插件node-excel-export导出数据
 3. 前端接收到blob数据后, URL.createObjectURL创建临时链接,生成a标签后, 主动触发下载
 
-> [代码链接](https://github.com/wanwusangzhi1992/WebStudy/blob/master/dayText/excel) https://github.com/wanwusangzhi1992/WebStudy/blob/master/dayText/excel   
+> [代码链接](https://github.com/wanwusangzhi1992/WebStudy/tree/master/dayTest/excel) https://github.com/wanwusangzhi1992/WebStudy/tree/master/dayTest/excel 
 > 知识链接   
 	* https://www.npmjs.com/package/xlsx-style
 	* https://www.npmjs.com/package/node-excel-export
