@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>object extends& Object.assign 理解与运用</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	var _extends = function(target) {
+		for (var i = 1; i < arguments.length; i++ ) {
+			var source = arguments[i];
+			for (var key in source) {
+				if (Object.prototype.hasOwnProperty.call(source, key)) {
+					target[key] = source[key]
+				}
+			}
+		}
+		console.log('object is changed by second arguments, result: ', target)
+		return target
+	}
+	_extends({name: 'lihao', list: [{bookName: 'book1'}, {bookName: 'book2'}]} , {name: 'lisan', list: [{foods: 'fishes'}]})
+</script>
+</html>
