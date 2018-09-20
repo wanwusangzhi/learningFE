@@ -21,3 +21,6 @@
 [一 mysql安装与配置 20180802]
 ### Node
 [一 Node Excel 导出前端post数据 20180813](https://github.com/wanwusangzhi1992/WebStudy/blob/master/note/node/node-excel-export.md)
+
+### 测试用例
+[一 Jest typescript 20180920](https://github.com/wanwusangzhi1992/WebStudy/blob/master/dayTest/jest-typescript)

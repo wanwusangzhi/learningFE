@@ -1,0 +1,42 @@
+{
+  "name": "@efox/websdk",
+  "version": "0.0.1",
+  "description": "efox-websdk适用不同版本工具调用api组件",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc --build --force --verbose",
+    "test": "jest --verbose --colors --bail",
+    "testw": "jest --watch",
+    "testc": "jest --coverage"
+  },
+  "keywords": [
+    "efox",
+    "websdk"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^23.3.2",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.1.4",
+    "typescript": "^3.0.3"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.(t|j)sx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  }
+}

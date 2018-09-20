@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "lib": ["es2017", "es7", "es6", "dom"],
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "declaration": true,
+    "sourceMap": true,
+    "strict": true,
+    "module": "commonjs",
+    "target": "es5",
+    "esModuleInterop": false,
+    "removeComments":true
+  },
+  "include": [
+      "./src/**/*"
+  ],
+  "compileOnSave": true,
+  "exclude": [
+    "./dist",
+    "node_modules"
+  ]
+}
