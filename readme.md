@@ -20,9 +20,11 @@
 [一 dart environment 20181103](https://github.com/wanwusangzhi1992/WebStudy/blob/master/note/dart/dart.md)
 
 ### 数据库
-[一 mysql安装与配置 20180802]
+[一 mysql安装与配置 20180802](https://github.com/wanwusangzhi1992/WebStudy/blob/master/note/database/mysql.md)
+
 ### Node
 [一 Node Excel 导出前端post数据 20180813](https://github.com/wanwusangzhi1992/WebStudy/blob/master/note/node/node-excel-export.md)
+
 [二 HTTP2 + Node + Express 实现 Server Push 20181103](https://github.com/wanwusangzhi1992/WebStudy/blob/master/note/node/http2-node-express.md)
 
 ### 测试用例
