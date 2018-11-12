@@ -16,6 +16,8 @@
 
 [六 generator理解与运用 20180801](https://github.com/wanwusangzhi1992/WebStudy/blob/master/note/base_knowledge/generator.md)
 
+[七 user-scalable=no 兼容问题 20181112](https://github.com/wanwusangzhi1992/WebStudy/blob/master/note/base_knowledge/userScalable.md)
+
 ### Dart
 [一 dart environment 20181103](https://github.com/wanwusangzhi1992/WebStudy/blob/master/note/dart/dart.md)
 
