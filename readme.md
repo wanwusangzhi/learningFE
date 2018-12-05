@@ -31,3 +31,9 @@
 
 ### 测试用例
 [一 Jest typescript 20180920](https://github.com/wanwusangzhi1992/WebStudy/blob/master/dayTest/jest-typescript)
+
+### TODO
+1	h5自适应配置
+2	nginx配置
+3	重构
+4	小程序vue框架
