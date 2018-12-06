@@ -2,7 +2,7 @@
 
 #### 二  HTTP2 + Node + Express 实现 Server Push 20181103
 
-> [代码链接](https://github.com/wanwusangzhi1992/WebStudy/tree/master/dayTest/serverpush) https://github.com/wanwusangzhi1992/WebStudy/tree/master/dayTest/serverpush 
+> [代码链接](https://github.com/wanwusangzhi/WebStudy/tree/master/dayTest/serverpush) https://github.com/wanwusangzhi/WebStudy/tree/master/dayTest/serverpush 
 
 #### http2
 HTTP/2主要利用多路复用传输，头部压缩，服务端推送，可以减少网络延迟对性能带来的影响，优化首次访问速度，从而提高传输效率。

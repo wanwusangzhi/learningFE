@@ -1,7 +1,7 @@
 # definePrototype理解之Vue、Vuex实现双向数据绑定
 
 #### 二 definePrototype理解之Vue、Vuex实现双向数据绑定 20180729
-> [测试用例](https://github.com/wanwusangzhi1992/WebStudy/blob/master/dayTest/commonTest/defineProperty.html)
+> [测试用例](https://github.com/wanwusangzhi/WebStudy/blob/master/dayTest/commonTest/defineProperty.html)
 
 ```
 <!DOCTYPE html>

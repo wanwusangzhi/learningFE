@@ -1,7 +1,7 @@
 # 居中布局
 
 #### 三 居中布局 20180729
-> [测试用例](https://github.com/wanwusangzhi1992/WebStudy/blob/master/dayTest/commonTest/center.html)
+> [测试用例](https://github.com/wanwusangzhi/WebStudy/blob/master/dayTest/commonTest/center.html)
 
 ```
 <!DOCTYPE html>

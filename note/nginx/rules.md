@@ -1,7 +1,7 @@
 # nginx config rules
 
 #### 一 nginx 配置规则
-<!-- > [测试用例](https://github.com/wanwusangzhi1992/WebStudy/blob/master/dayTest/commonTest/generator.html) -->
+<!-- > [测试用例](https://github.com/wanwusangzhi/WebStudy/blob/master/dayTest/commonTest/generator.html) -->
 ##### (一) 	nginx安装  
 ```
 安装的内容可以官网

@@ -2,7 +2,7 @@
 
 #### 一 user-scalable=no 兼容问题 20181112
 
-> [测试用例](https://github.com/wanwusangzhi1992/WebStudy/blob/master/dayTest/userScalable/index.html)
+> [测试用例](https://github.com/wanwusangzhi/WebStudy/blob/master/dayTest/userScalable/index.html)
 ```
 <!DOCTYPE html>
 <html>

@@ -1,7 +1,7 @@
 # es5与es6中多态的理解 extends
 
 #### 五 es5与es6中多态的理解 extends 20180801
-> [测试用例](https://github.com/wanwusangzhi1992/WebStudy/blob/master/dayTest/commonTest/extends.html)
+> [测试用例](https://github.com/wanwusangzhi/WebStudy/blob/master/dayTest/commonTest/extends.html)
 
 ```
 <!DOCTYPE html>
