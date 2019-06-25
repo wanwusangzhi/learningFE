@@ -1,6 +1,6 @@
 # garbageCollection
 
-#### 四 garbageCollection 20180729
+## 四 garbageCollection 20180729
 > [测试用例](https://github.com/wanwusangzhi/WebStudy/blob/master/dayTest/commonTest/testGarbageCollection.html)
 
 ```

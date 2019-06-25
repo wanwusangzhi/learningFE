@@ -6,7 +6,7 @@
 ### Knowledge
 [一 what is prototype 20180728](https://github.com/wanwusangzhi1992/WebStudy/blob/master/note/base_knowledge/prototype.md)
 
-[二 definePrototype理解之Vue、Vuex实现双向数据绑定 20180729](https://github.com/wanwusangzhi1992/WebStudy/blob/master/note/base_knowledge/definePrototype.md)
+[二 defineProperty理解之Vue、Vuex实现双向数据绑定 20180729](https://github.com/wanwusangzhi1992/WebStudy/blob/master/note/base_knowledge/defineProperty.md)
 
 [三 居中布局](https://github.com/wanwusangzhi1992/WebStudy/blob/master/note/base_knowledge/center.md)
 

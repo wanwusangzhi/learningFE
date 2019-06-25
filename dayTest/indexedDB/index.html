@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>indexedDB</title>
+</head>
+<body>
+
+
+</body>
+<script type="text/javascript">
+	var db = null;
+	var request = indexedDB.open('library');
+	// 版本升级或第一次新建会执行onupgradeneeded
+	request.onupgradeneeded = function (event) {
+		console.info('database upgrade', event)
+		db = request.result;
+		if (!db.objectStoreNames.contains('books')) {
+			console.info('database do not exist')
+			var store = db.createObjectStore('books', { autoIncrement: true});
+			store.put({id: 1,title: 'book1', author: 'Fred'})
+			store.put({id: 2,title: 'book2', author: 'Fred'})
+			store.put({id: 2,title: 'book3', author: 'Hary'})
+		} else {
+			console.info('database exist')
+		}
+	}
+	// 数据库打开成功
+	request.onsuccess = async function (event) {
+		console.info('database open success');
+		db = request.result;
+		var store = db.transaction('books').objectStore('books')
+		var list = [];
+		store.openCursor().onsuccess = function (event) {
+			var cursor = event.target.result;
+			if (cursor) {
+				console.log('cursor', cursor)
+				list.push(cursor.value)
+				cursor.continue();
+			}
+			console.log('list', list)
+		}
+		console.log('db: ', db);
+	}
+	// 数据库打开失败
+	request.onerror = function (event) {
+		console.error('database open fail', event);
+	}
+	function add(...paylaod) {
+
+	}
+</script>
+</html>

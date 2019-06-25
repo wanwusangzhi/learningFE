@@ -1,6 +1,6 @@
 # prototype & __proto__ 
 
-#### 一 what is prototype ? 20180728
+## 一 what is prototype ? 20180728
 
 > [测试用例](https://github.com/wanwusangzhi/WebStudy/blob/master/dayTest/commonTest/prototype.html)
 ```
