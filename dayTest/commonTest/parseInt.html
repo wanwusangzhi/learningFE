@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>parseInt</title>
+</head>
+<body>
+	实现parseInt
+</body>
+<script type="text/javascript">
+	let _parseInt = function(num) {
+		let index = 0; // 定义下标
+		let result = 0; // 返回值
+		let negative = false; // 标记是否负数
+ 
+		if (num.startsWith('-')) {
+			index++;
+			negative = true;
+		}
+		let arr = num.split('');
+		while(index < num.length) {
+			result = +arr[index] +result * 10 ;
+			console.log(index, result)
+			index++;
+		}
+		if (negative) {
+			result = -result
+		}
+		console.log('result', result)
+	}
+	_parseInt('-22222');
+</script>
+</html>
