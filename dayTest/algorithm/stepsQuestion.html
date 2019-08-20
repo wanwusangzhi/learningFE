@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>步伐问题</title>
+</head>
+<body>
+	<p>
+		共有n个台阶，每次只能上1个台阶或者2个台阶，共有多少种方法爬完台阶。
+	</p>
+	<p>
+		共有n页书，每次只能翻1页或者2页书，共有多少种方法翻完全书。
+	</p>
+</body>
+<script type="text/javascript">
+	let steps = [1, 5]
+	console.time('steps spend time')
+	const cache = {} // 缓存数据，优化计算时间
+	let useCache = true
+	function step(n) {
+		if (cache[n] && useCache) {
+			return cache[n]
+		}
+		if ( n <= steps[steps.length - 1]) {
+			cache[n] = n;
+			return n;
+		}
+		if (n > steps[steps.length - 1]) {
+			const result = []
+			for (let i = 1; i <= steps.length; i++ ) {
+				result.push(step(n - i));
+				console.log('step', result)
+			}
+			console.log('list', result)
+			cache[n] = result.reduce(function(a, b) { return a + b}, 0);
+			return cache[n]
+			// return step(n - 1) + step(n - 2);
+		}
+	}
+
+	const result = step(20);
+	console.log('result', result)
+	console.timeEnd('steps spend time')
+</script>
+</html>

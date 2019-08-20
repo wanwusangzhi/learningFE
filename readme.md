@@ -35,6 +35,8 @@
 [一 Jest typescript 20180920](https://github.com/wanwusangzhi/WebStudy/blob/master/dayTest/jest-typescript)
 
 ### 算法与数据结构
+[算法与数据结构](https://github.com/wanwusangzhi/WebStudy/blob/master/note/algorithm/index.md)
+[快速排序](https://github.com/wanwusangzhi/WebStudy/blob/master/note/algorithm/quicksort.md)
 
 
 ### TODO

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LazyMan.html</title>
+</head>
+<body>
+	<div>
+		<h2>实现一个LazyMan，可以按照以下方式调用:</h2>
+		<br>
+
+		<h3>LazyMan('Hank')</h3>
+		输出: 	
+		Hi! This is Hank! 
+		<div id='result1'></div>
+		<br>
+
+		<h3>LazyMan('Hank').sleep(10).eat('dinner')</h3>
+		输出: 	
+
+		Hi! This is Hank!<br>
+		// 等待10秒..<br>
+		Wake up after 10<br>
+		Eat dinner~<br>
+		<div id='result2'></div>
+		<br>
+
+		<h3>LazyMan('Hank').eat('dinner').eat('supper')</h3>
+		输出: 	
+		Hi This is Hank!<br>
+		Eat dinner~<br>
+		Eat supper~<br>
+		<div id='result3'></div>
+		<br>
+
+		<h3>LazyMan('Hank').sleepFirst(5).eat('supper')</h3>
+		输出: 	
+		//等待5秒<br>
+		Wake up after 5<br>
+		Hi This is Hank!<br>
+		Eat supper<br>
+
+		<div id='result4'></div>
+	</div>
+</body>
+<script type="text/javascript">
+	// es5
+	function LazyMan(name) {
+		return new _lazyMan(name);
+	}
+	function _lazyMan(name) {
+		var that = this
+		that.name = name
+		that.taskList = []
+		var _fn = function() {
+			console.log('Hi, that is', name);
+			that.next(1,2,3);
+		}
+		that.taskList.push(_fn);
+		setTimeout(function() {
+			that.next()
+		}, 0);
+	}
+	_lazyMan.prototype.next = function() {
+		var _fn = this.taskList.shift();
+		// _fn && _fn.call(this);
+		console.log('运行next', _fn, this)
+		if (_fn) {
+			var obj = {};
+			obj.__proto__ = this;
+			obj.fn = _fn;
+			obj.fn();
+			obj = null;
+		}
+		_fn = null
+	}
+
+	_lazyMan.prototype.sleep = function(time) {
+		var _fn = (function(time){
+			return function() {
+				var that = this;
+				setTimeout(function() {
+					console.log('sleep', time);
+					that.next();
+				}, time * 1000);
+			}
+		})(time);
+		this.taskList.push(_fn)
+		return this;
+	}
+
+	_lazyMan.prototype.eat = function(food) {
+		var _fn = (function(food) {
+			return function() {
+				console.log('eat', food);
+				this.next();
+			}
+		})(food);
+		this.taskList.push(_fn)
+		return this;
+	}
+
+	_lazyMan.prototype.sleepFirst = function(time) {
+		var _fn = (function(time) {
+			return function() {
+				var that = this
+				setTimeout(function() {
+					console.log('sleepFirst', time);
+					that.next();
+				}, time * 1000)
+			}
+		})(time);
+
+		this.taskList.unshift(_fn);
+		return this;
+	}
+
+	// LazyMan('Hank')
+	// var result1 = LazyMan('Hank');
+	// console.log('result1', result1);
+
+	// LazyMan('Hank').sleep(10).eat('dinner')
+	// var result2 = LazyMan('Hank').sleep(2).eat("dinner");
+	// console.log('result2', result2)
+
+	// LazyMan('Hank').eat('dinner').eat('supper')
+	// var result3 = LazyMan('Hank').eat('dinner').eat('supper');
+	// console.log('result3', result3)
+
+	// LazyMan('Hank').sleepFirst(5).eat('supper')
+	var result4 = LazyMan('Hank').sleepFirst(2).eat('supper');
+	// console.log('result4', result4)
+
+
+</script>
+</html>

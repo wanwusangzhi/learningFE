@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tree</title>
+</head>
+<body>
+	<h2>二叉树</h2>
+</body>
+<script type="text/javascript">
+	function Node(data) {
+		this.data = data;
+		this.left = null;
+		this.right = null;
+	}
+
+	function Tree() {
+		this.root = null;
+	}
+
+	Tree.prototype.find = function(data, node) {
+		if (node == null) return null;
+
+		if (node.data > data) {
+			if (node.left) {
+				node = node.left;
+			} else {
+				return node;
+			}
+		}
+		if (node.data < data) {
+			if (node.right) {
+				node = node.right;
+			} else {
+				return node;
+			}
+		}
+		return this.find(data, node)
+	}
+	Tree.prototype.insert = function(data) {
+		if (this.root == null) {
+			this.root = new Node(data);
+			return
+		}
+		var parentNode = this.find(data, this.root);
+		var node = new Node(data);
+		if (parentNode.data > data) {
+			var _node = parentNode.left
+			parentNode.left = node;
+			node.left = _node;
+		} else {
+			var _node = parentNode.right
+			parentNode.right = node;
+			node.right = _node;
+		}
+	}
+	Tree.prototype.preOrder = function() {
+		var currentNode = this.root;
+		function _preOrder(node) {
+			if(node != null) {
+				console.log(node.data)
+				_preOrder(node.left)
+				_preOrder(node.right)
+			}
+		}
+		_preOrder(currentNode);
+	}
+	Tree.prototype.midOrder = function() { 
+		var currentNode = this.root;
+		function _midOrder(node) {
+			if (node != null) {
+				_midOrder(node.left);
+				console.log(node.data);
+				_midOrder(node.right);
+			}
+		}
+		_midOrder(currentNode);
+	}
+	Tree.prototype.postOrder = function() { 
+		var currentNode = this.root;
+		function _postOrder(node) {
+			if (node != null) {
+				_postOrder(node.left);
+				_postOrder(node.right);
+				console.log(node.data);
+			}
+		}
+		_postOrder(currentNode);
+	}
+	/**
+	*		8
+	*	2		9
+	* 1   4       10
+	*/
+	var tree = new Tree();
+	tree.insert(8);
+	tree.insert(2);
+	tree.insert(9);
+	tree.insert(1);
+	tree.insert(4);
+	tree.insert(10);
+	console.log(tree)
+	tree.preOrder()
+	console.log('---')
+	tree.midOrder()
+	console.log('---')
+	tree.postOrder()
+</script>
+</html>
