@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>How to Use middleware</title>
+</head>
+<body>
+
+</body>
+
+<script type="text/javascript">
+	
+	function App() {
+		this.middleware = []
+	}
+	App.prototype.use = function(fn) {
+		this.middleware.push(fn)
+	}
+	App.prototype.listen = function() {
+		this.next()
+	}
+	App.prototype.next = function() {
+		this.compose()
+	}
+	App.prototype.compose = function() {
+		const that = this
+		let lastFn = function() {
+			return Promise.resolve();
+		}
+		function dispatch(fn, next) {
+			console.log('fn', fn, next)
+			return () => {
+				fn.call(that, next)
+			}
+		}
+		this.middleware.reverse().forEach(next => {
+			console.log('lastFn', lastFn)
+			lastFn = dispatch(next, lastFn)
+		})
+		lastFn();
+	}
+	var app = new App();
+	app.use(async function(next) {
+		console.log(1);
+		await next();
+		console.log(4);
+	})
+	app.use(async function(next) {
+		console.log(2);
+		await next();
+		console.log(3);
+	})
+	console.log(app.listen())
+</script>
+</html>
