@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LinearSearch And BinarySearch</title>
+</head>
+<body>
+	<p>线性查找与二分查找</p>
+</body>
+<script type="text/javascript">
+	const resourceArr = []
+	for (let i = 0; i < 18000; i++){
+		resourceArr.push(i)
+	}
+
+	function linearSearch(arr, dest) {
+		console.time(`linearSearch ${dest}`)
+		let result = -1;
+		for (let i = 0; i < arr.length; i++) {
+			if (arr[i] === dest) {
+				result = i;
+				break;
+			}
+		}
+		console.timeEnd(`linearSearch ${dest}`)
+		return result;
+	}
+	console.log(linearSearch(resourceArr, 20000))
+	console.log(linearSearch(resourceArr, 5))
+	console.log(linearSearch(resourceArr, 7))
+
+
+	function binarySearch(arr, left, right, dest) {
+		if (arr[left] === dest) {
+			return left;
+		}
+		if (arr[right] === dest) {
+			return right;
+		}
+		const mid = Math.floor((left + right) / 2)
+		if (left >= mid) {
+			return -1;
+		}
+		if (dest < arr[mid]) {
+			return binarySearch(arr, left, mid, dest); 
+		} else {
+			return binarySearch(arr, mid, right, dest);
+		}
+	}
+	console.time(`binarySearch 2`)
+	console.log(binarySearch(resourceArr, 0, resourceArr.length - 1, 20000))
+	console.timeEnd(`binarySearch 2`)
+	console.time(`binarySearch 5`)
+	console.log(binarySearch(resourceArr, 0, resourceArr.length - 1, 5))
+	console.timeEnd(`binarySearch 5`)
+	console.time(`binarySearch 7`)
+	console.log(binarySearch(resourceArr, 0, resourceArr.length - 1, 7))
+	console.timeEnd(`binarySearch 7`)
+</script>
+</html>
+
+
