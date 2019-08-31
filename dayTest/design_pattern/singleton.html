@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Singleton</title>
+</head>
+<body>
+	<h2>Singleton</h2>
+</body>
+<script type="text/javascript">
+	// 懒汉模式，在调用时才创建实例 es5
+	var lazySingletonES5 = (function() {
+		var instance = null
+		function Single(name) {
+			this.name = name
+		}
+		return function() {
+			if (!instance) {
+				instance = new Single(arguments[0])
+				console.warn("创建实例")
+				return instance
+			}
+			console.warn("存在实例")
+			return instance
+		}
+	})()
+
+	var lazySingletonObj1 = lazySingletonES5('实例1')
+	var lazySingletonObj2 = lazySingletonES5('实例1')
+	console.log('lazySingletonObj1: ',lazySingletonObj1)
+	console.log('lazySingletonObj2: ',lazySingletonObj2)
+
+
+	// 懒汉模式，在调用时才创建实例 es5
+	var hungrySingletonES5 = (function() {
+		function Single(name) {
+			this.name = name
+		}
+		var instance = new Single('饿汉模式')
+		return function() {
+			console.warn("存在实例")
+			return instance
+		}
+	})()
+
+	var hungrySingletonObj1 = hungrySingletonES5()
+	var hungrySingletonObj2 = hungrySingletonES5()
+	console.log('hungrySingletonObj1: ',hungrySingletonObj1)
+	console.log('hungrySingletonObj2: ',hungrySingletonObj2)
+
+
+
+	// 懒汉模式，在调用时才创建实例 es6
+	class LazySingleton {
+		constructor(name) {
+			this.name = name;
+		}
+		static getInstance = (() => {
+			let instance = null
+			return (...args) => {
+				if (instance === null) {
+					console.warn('创建实例')
+					instance = new LazySingleton(...args)
+					return instance
+				}
+				console.warn('存在实例')
+				return instance
+			}
+		})()
+	}
+	const lazyInst1 = LazySingleton.getInstance('懒汉模式')
+	const lazyInst2 = LazySingleton.getInstance('懒汉模式')
+	console.log('lazyInst1', lazyInst1)
+	console.log('lazyInst2', lazyInst2)
+	console.log('lazyInst1 === lazyInst2', lazyInst1 === lazyInst2)
+
+	// 饿汉模式，先创建实例后给予调用 es6
+	class HungrySingleton {
+		constructor (name) {
+			this.name = name;
+		}
+		static getInstance = (() => {
+			const instance = new HungrySingleton('饿汉模式')
+			return () => {
+				return instance
+			}
+		})()
+	}
+	const hungryInst1 = HungrySingleton.getInstance('懒汉模式')
+	const hungryInst2 = HungrySingleton.getInstance('懒汉模式')
+	console.log('hungryInst1', hungryInst1)
+	console.log('hungryInst2', hungryInst2)
+	console.log('hungryInst1 === hungryInst2', hungryInst1 === hungryInst2)
+
+</script>
+</html>
